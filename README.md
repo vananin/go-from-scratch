@@ -8,7 +8,7 @@ The project is designed for two main purposes:
 
 Rather than focusing on algorithms, this repository emphasizes writing maintainable, scalable, and testable software similar to what is built in production systems.
 
-## What you'll find
+## What you'll find (something is still in progress)
 
 The project demonstrates many of the practices expected from a modern backend service, including:
 
