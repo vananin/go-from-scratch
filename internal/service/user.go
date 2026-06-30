@@ -21,7 +21,6 @@ func NewUserService(repo UserRepository) *UserService {
 }
 
 func (s *UserService) GetByID(ctx context.Context, id int64) (*domain.User, error) {
-	// Business rules can be added here later.
-
+	// TODO implement it
 	return s.repo.GetByID(ctx, id)
 }

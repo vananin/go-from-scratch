@@ -88,23 +88,25 @@ The goal is to keep the project practical, easy to understand, and close to real
 ## Engineering Principles
 This project follows the same engineering principles used when building production-ready backend services.
 
+- Follow the **[Uber Go Style Guide](https://github.com/uber-go/guide)** and write idiomatic Go
 - **Separation of concerns** – keep business logic, transport, persistence, and infrastructure independent.
 - **Testability** – write code that is easy to unit and integration test.
 - **Graceful shutdown** – properly shut down HTTP/gRPC servers, database connections, background workers, and respect context cancellation.
 - **Context propagation** – pass `context.Context` through the entire request lifecycle for cancellation, deadlines, and request-scoped values.
 - **Dependency injection** – wire dependencies manually instead of relying on a DI framework to keep dependencies explicit and easy to follow.
+- **Composition** over inheritance.
 - **Observability**
-- **Structured logging with slog**
-- **Distributed tracing**
 - **Metrics**
+- **Distributed tracing**
+- **Clean error handling** – return meaningful domain errors and translate them appropriately at API boundaries.
+- **Structured logging with slog**
+- **Wrap errors**
 - **Health checks**
 - **Interfaces where they're consumed** – define interfaces in the package that uses them (typically the service layer). Concrete implementations satisfy them implicitly, reducing coupling and making testing easier.
 - **The bigger the interface the weaker abstraction.**
-- **Clean error handling** – return meaningful domain errors and translate them appropriately at API boundaries.
-- **Wrap errors**
-- **Production-ready project structure** – organize packages for maintainability and scalability rather than around frameworks.
-- Fixed something - write a test
-
+- **Fixed something?** - write a test!
+- **SOLID principles** where appropriate
+- **Favor simplicity** over clever abstractions
 
 ## TODO
 - docker-compose
