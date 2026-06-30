@@ -45,46 +45,6 @@ This repository is useful if you want to:
 
 The goal is to keep the project practical, easy to understand, and close to real-world backend services used in production.
 
------------------------------------
-# Get started
-## Project structure
-- cmd
-    - api
-        - main.go
-- internal
-    - app
-        - app.go
-        - run.go
-        - shutdown.go
-    - config
-        - app.go
-    - http
-        - router.go
-        - handlers/
-        - middleware/
-    - grpc
-        - users
-            - handler.go
-    - service
-        - user_service.go
-    - repository
-        - user.go
-    - domain - core business model and domain-level errors/rules.
-        - user.go
-        - errors.go
-    - db
-        - postgres.go
-    - observability
-        - logger.go
-        - metrics.go
-        - tracing.go
-- migrations
-    - sql...
-- api
-    - proto files
-- pkg
-- gen
-
 ## Engineering Principles
 This project follows the same engineering principles used when building production-ready backend services.
 
@@ -107,6 +67,51 @@ This project follows the same engineering principles used when building producti
 - **Fixed something?** - write a test!
 - **SOLID principles** where appropriate
 - **Favor simplicity** over clever abstractions
+
+## Draft project structure
+- cmd
+    - some-service
+        - main.go
+- internal
+    - app
+        - app.go
+        - run.go
+        - shutdown.go
+    - config
+        - app.go
+        - env.go
+    - http
+        - router.go
+        - handlers.go
+        - middleware.go
+        - response.go
+        - server.go
+    - grpc
+        - users
+            - handler.go
+    - service
+        - user.go
+        - user_test.go
+    - repository
+        - user
+            - repo.go
+            - repo_test.go
+    - domain - core business model and domain-level errors/rules.
+        - user.go
+        - errors.go
+    - db
+        - postgres.go
+    - observability
+        - logger.go
+        - metrics.go
+        - tracing.go
+- migrations
+    - *.sql
+- api
+    - proto files
+- pkg
+- gen
+
 
 ## TODO
 - docker-compose
